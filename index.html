@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" href="./style/style.css">
+    
     <script type="text/javascript" src="index.js"></script>
 
     <!-- Google fonts -->
@@ -19,6 +20,23 @@
 </head>
 <body id="body" onLoad="choseBackground()">
     <div class="terminal">
+        <p>~/startpage > info --all</p>
+        <div class="info">
+            <table>
+                <tr>
+                    <th>[Time]</th>
+                    <th>[Data]</td>
+                    <th>[BTC]</th>
+                    <th>[ETH]</th>
+                </tr>
+                <tr>
+                    <td id="time">09:10</td>
+                    <td id="date">13.05.2022</td>
+                    <td id="btc-price">---</td>
+                    <td id="eth-price">---</td>
+                </tr>
+            </table>
+        </div>
         <p>~/startpage > ls</p>
 
         <div class="bookmarks">
@@ -56,5 +74,7 @@
         <p>~/startpage > cd <span class="blinking">|</span></p>
     </div>
     
+    <script src="./script/btc.js"></script>
+
 </body>
 </html>
