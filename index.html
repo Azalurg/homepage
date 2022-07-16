@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" href="./style/style.css">
-    <script type="text/javascript" src="index.js"></script>
 
     <!-- Google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,44 +16,60 @@
     <title>~/startpage</title>
     <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/Azalurg-Uni-Projects/Frontend-React-Project/main/frontend/public/favicon.ico">
 </head>
-<body id="body" onLoad="choseBackground()">
+<body id="body">
     <div class="terminal">
+        <p>~/startpage > info --all</p>
+
+        <div class="info">
+            <div class="category">
+                <li class="title">[Time]</li>
+                <li id="time">---</li>
+            </div>
+            <div class="category">
+                <li class="title">[Date]</li>
+                <li id="date">---</li>
+            </div>
+            <div class="category">
+                <li class="title">[BTC]</li>
+                <li id="btc-price">---</li>
+            </div>
+            <div class="category">
+                <li class="title">[ETH]</li>
+                <li id="eth-price">---</li>
+            </div>
+        </div>
+
         <p>~/startpage > ls</p>
 
         <div class="bookmarks">
             <div class="category">
-                <div class="links">
-                    <li class="title">> daily</li>
-                    <li><a href="https://www.facebook.com/">facebook</a></li>
-                    <li><a href="https://mail.google.com/">gmail</a></li>
-                    <li><a href="https://www.instagram.com/">instagram</a></li>
-                    <li><a href="https://youtube.com/">youtube</a></li>
-                </div>
+                <li class="title">> daily</li>
+                <li><a href="https://www.facebook.com/">facebook</a></li>
+                <li><a href="https://mail.google.com/">gmail</a></li>
+                <li><a href="https://www.instagram.com/">instagram</a></li>
+                <li><a href="https://youtube.com/">youtube</a></li>
+            </div>
+            <div class="category">
+                <li class="title">> dev</li>
+                <li><a href="https://github.com/">github</a></li>
+                <li><a href="https://stackoverflow.com/">stackoverflow</a></li>
+                <li><a href="https://distrowatch.com/">distrowatch</a></li>
+                <li><a href="https://devdocs.io/">devdocs</a></li>
             </div>
 
             <div class="category">
-                <div class="links">
-                    <li class="title">> dev</li>
-                    <li><a href="https://github.com/">github</a></li>
-                    <li><a href="https://stackoverflow.com/">stackoverflow</a></li>
-                    <li><a href="https://distrowatch.com/">distrowatch</a></li>
-                    <li><a href="https://devdocs.io/">devdocs</a></li>
-                </div>
-            </div>
-
-            <div class="category">
-                <div class="links">
-                    <li class="title">> reddit</a></li>
-                    <li><a href="https://reddit.com/r/programming/">r/programming</a></li>
-                    <li><a href="https://reddit.com/r/archlinux/">r/archlinux</a></li>
-                    <li><a href="https://reddit.com/r/unixporn/">r/unixporn</a></li>
-                    <li><a href="https://reddit.com/r/linuxmasterrace/">r/linuxmr</a></li>
-                </div>
+                <li class="title">> reddit</a></li>
+                <li><a href="https://reddit.com/r/programming/">r/programming</a></li>
+                <li><a href="https://reddit.com/r/archlinux/">r/archlinux</a></li>
+                <li><a href="https://reddit.com/r/unixporn/">r/unixporn</a></li>
+                <li><a href="https://reddit.com/r/linuxmasterrace/">r/linuxmr</a></li>
             </div>
         </div>
 
         <p>~/startpage > cd <span class="blinking">|</span></p>
     </div>
     
+    <script src="./script/btc.js"></script>
+
 </body>
 </html>

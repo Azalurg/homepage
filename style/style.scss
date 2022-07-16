@@ -15,7 +15,7 @@ body{
     margin: 0;
     padding: 0;
     line-height: 1.5;
-    min-height: 80vh;
+    min-height: 100vh;
     font-size: 1rem;
     font-family: 'Anonymous Pro', monospace;
     background-image: url("https://images.pexels.com/photos/1287145/pexels-photo-1287145.jpeg");
@@ -31,29 +31,46 @@ body{
     padding-left: 2%;
     background-color: $background;
 }
-  
-.category{
-display: flex;
-flex-direction: column;
-width: 12rem;
-}
 
 .bookmarks{
-display: flex;
-justify-content: center;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  .category{
+    display: flex;
+    flex-direction: column;
+    width: 10rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+
+    .title{
+      font-size: 1.5rem;
+      text-decoration: underline;
+      }
+  }
 }
 
-.links{
-display: flex;
-flex-direction: column;
-padding-top: 1rem;
-padding-bottom: 1rem;
+.info{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  .category{
+    display: flex;
+    flex-direction: column;
+    width: 8rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    align-items: center;
+
+
+    .title{
+      
+    }
+  }
 }
 
-.title{
-font-size: 1.5rem;
-text-decoration: underline;
-}
 
 li{
 font-size: 1rem;
