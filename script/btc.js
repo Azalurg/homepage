@@ -14,7 +14,7 @@ ws.onmessage = (event) => {
     lastPrice = price;
 }
 
-let ws_eth = new WebSocket("wss://stream.binance.com:9443/ws/ethusdt@kline_15m");
+let ws_eth = new WebSocket("wss://stream.binance.com:9443/ws/ethusdt@kline_5m");
 let stockPriceElement_eth = document.getElementById("eth-price");
 let lastPrice_eth = null;
 
@@ -25,3 +25,11 @@ ws_eth.onmessage = (event) => {
     stockPriceElement_eth.style.color = !lastPrice_eth || lastPrice_eth === price ? foreground : price > lastPrice_eth ? green : red
     lastPrice_eth = price;
 }
+
+setInterval(()=> {
+    const current_date = new Date();
+    time.innerText = current_date.toLocaleTimeString('pl-PL');
+}, 1000)
+
+date.innerText = new Date().toLocaleDateString('pl-PL');
+body.style.backgroundImage = `url(https://picsum.photos/1920/1080?random=1)`;
