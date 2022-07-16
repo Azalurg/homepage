@@ -1,0 +1,93 @@
+// [colors]
+$background: rgba(31, 34, 40, 0.8);
+$background-alt: rgba(46, 52, 64, 0.8);
+$foreground: #d8dee9;
+$black: #5c6370;
+$red: #e06c75;
+$green: #98c379;
+$yellow: #d19a66;
+$blue: #61afef;
+$magenta: #c678dd;
+$cyan: #56b6c2;
+$white: #eceff4;
+
+body{
+    margin: 0;
+    padding: 0;
+    line-height: 1.5;
+    min-height: 80vh;
+    font-size: 1rem;
+    font-family: 'Anonymous Pro', monospace;
+    background-image: url("https://images.pexels.com/photos/1287145/pexels-photo-1287145.jpeg");
+    background-size: cover!important;
+    color: $foreground;
+}
+
+.terminal{
+    position: absolute;
+    top: 10%;
+    right: 20%;
+    left: 20%;
+    padding-left: 2%;
+    background-color: $background;
+}
+  
+.category{
+display: flex;
+flex-direction: column;
+width: 12rem;
+}
+
+.bookmarks{
+display: flex;
+justify-content: center;
+}
+
+.links{
+display: flex;
+flex-direction: column;
+padding-top: 1rem;
+padding-bottom: 1rem;
+}
+
+.title{
+font-size: 1.5rem;
+text-decoration: underline;
+}
+
+li{
+font-size: 1rem;
+list-style-type: none;
+padding: 0.5rem
+}
+
+a{
+    text-decoration: none;
+    color: $foreground;
+    padding: 0.5rem;
+    border-radius: 10%;
+}
+
+a:hover{
+    background-color: $background-alt;
+}
+  
+
+.blinking{
+    animation: opacity 2s ease-in-out infinite;
+    opacity: 1;
+  }
+  
+  @keyframes opacity{
+    0%{
+      opacity: 1;
+    }
+  
+    50%{
+      opacity: 0;
+    }
+  
+    100%{
+      opacity: 1;
+    }
+  }
