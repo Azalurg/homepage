@@ -4,6 +4,7 @@ body {
   line-height: 1.5;
   min-height: 100vh;
   font-size: 1rem;
+  font-weight: 400;
   font-family: "Anonymous Pro", monospace;
   background-image: url("https://images.pexels.com/photos/1287145/pexels-photo-1287145.jpeg");
   background-size: cover !important;
@@ -49,6 +50,21 @@ body {
   padding-bottom: 1rem;
   align-items: center;
 }
+form {
+  display: block;
+  -webkit-margin-before: 1em;
+          margin-block-start: 1em;
+  -webkit-margin-after: 1em;
+          margin-block-end: 1em;
+  -webkit-margin-start: 0px;
+          margin-inline-start: 0px;
+  -webkit-margin-end: 0px;
+          margin-inline-end: 0px;
+}
+form #searchValue {
+  all: unset;
+}
+
 li {
   font-size: 1rem;
   list-style-type: none;

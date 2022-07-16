@@ -16,7 +16,7 @@
     <title>~/startpage</title>
     <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/Azalurg-Uni-Projects/Frontend-React-Project/main/frontend/public/favicon.ico">
 </head>
-<body id="body">
+<body id="body" onload="document.jsform.searchValue.focus()">
     <div class="terminal">
         <p>~/startpage > info --all</p>
 
@@ -65,11 +65,13 @@
                 <li><a href="https://reddit.com/r/linuxmasterrace/">r/linuxmr</a></li>
             </div>
         </div>
-
-        <p>~/startpage > cd <span class="blinking">|</span></p>
+        <form class="js-form" name="jsform">
+            <label for="searchValue">~/startpage > cd</label>
+            <input type="text" name="searchValue" id="searchValue" autocomplete="off">
+        </form>
     </div>
     
-    <script src="./script/btc.js"></script>
+    <script src="./script/index.js"></script>
 
 </body>
 </html>
