@@ -1,40 +1,49 @@
-function choseBackground(){
-    const backgrounds = [
-        "https://images.pexels.com/photos/1287145/pexels-photo-1287145.jpeg", 
-        "https://images.pexels.com/photos/1323550/pexels-photo-1323550.jpeg",
-        "https://images.pexels.com/photos/2748716/pexels-photo-2748716.jpeg",
-        "https://images.pexels.com/photos/2885320/pexels-photo-2885320.jpeg",
-        "https://images.pexels.com/photos/130621/pexels-photo-130621.jpeg",
-        "https://images.pexels.com/photos/4004374/pexels-photo-4004374.jpeg",
-        "https://images.pexels.com/photos/1267881/pexels-photo-1267881.jpeg",
-        "https://images.pexels.com/photos/2835436/pexels-photo-2835436.jpeg",
-        "https://images.pexels.com/photos/461940/pexels-photo-461940.jpeg",
-        "https://images.pexels.com/photos/1647962/pexels-photo-1647962.jpeg",
-        "https://images.pexels.com/photos/12322495/pexels-photo-12322495.jpeg",
-        "https://images.pexels.com/photos/11993618/pexels-photo-11993618.jpeg",
-        "https://images.pexels.com/photos/2156881/pexels-photo-2156881.jpeg",
-        "https://images.pexels.com/photos/4512439/pexels-photo-4512439.jpeg",
-        "https://images.pexels.com/photos/623919/pexels-photo-623919.jpeg",
-        "https://images.pexels.com/photos/3394939/pexels-photo-3394939.jpeg",
-        "https://images.pexels.com/photos/2531608/pexels-photo-2531608.jpeg",
-        "https://images.pexels.com/photos/4198029/pexels-photo-4198029.jpeg",
-        "https://images.pexels.com/photos/2441454/pexels-photo-2441454.jpeg",
-        "https://images.pexels.com/photos/2441454/pexels-photo-2441454.jpeg",
-        "https://images.pexels.com/photos/2441454/pexels-photo-2441454.jpeg",
-        "https://images.pexels.com/photos/2441454/pexels-photo-2441454.jpeg",
-        "https://images.pexels.com/photos/2441454/pexels-photo-2441454.jpeg",
+// Crypto price
 
-    ];
+const foreground = '#d8dee9'
+const red = '#e06c75'
+const green = '#98c379'
 
-    function getRandomInt(min, max) {
-        min = Math.ceil(min);
-        max = Math.floor(max);
-        return Math.floor(Math.random() * (max - min + 1)) + min;
-    }
-;
-    const seed = backgrounds.length;
-    const chose = getRandomInt(0,seed-1);
+let ws = new WebSocket("wss://stream.binance.com:9443/ws/btcusdt@kline_5m");
+let stockPriceElement = document.getElementById("btc-price");
+let lastPrice = null;
 
-    const body = document.getElementById("body");
-    body.style.backgroundImage = `url(${backgrounds[chose]})`;
+ws.onmessage = (event) => {
+    let stockObject = JSON.parse(event.data);
+    let price = parseFloat(stockObject.k.h).toFixed(2);
+    stockPriceElement.innerText = "$" + price;
+    stockPriceElement.style.color = !lastPrice || lastPrice === price ? foreground : price > lastPrice ? green : red
+    lastPrice = price;
 }
+
+let ws_eth = new WebSocket("wss://stream.binance.com:9443/ws/ethusdt@kline_5m");
+let stockPriceElement_eth = document.getElementById("eth-price");
+let lastPrice_eth = null;
+
+ws_eth.onmessage = (event) => {
+    let stockObject = JSON.parse(event.data);
+    let price = parseFloat(stockObject.k.h).toFixed(2);
+    stockPriceElement_eth.innerText = "$" + price;
+    stockPriceElement_eth.style.color = !lastPrice_eth || lastPrice_eth === price ? foreground : price > lastPrice_eth ? green : red
+    lastPrice_eth = price;
+}
+
+// Time
+
+setInterval(()=> {
+    const current_date = new Date();
+    time.innerText = current_date.toLocaleTimeString('pl-PL');
+}, 1000)
+
+// Date
+date.innerText = new Date().toLocaleDateString('pl-PL');
+
+// Background
+body.style.backgroundImage = `url(https://picsum.photos/1920/1080?random=1)`;
+
+
+// Search engine
+document.querySelector('.js-form')?.addEventListener('submit', e => {
+    e.preventDefault();
+    window.open(`https://duckduckgo.com/?q=${searchValue.value}`, "_self")
+  });
