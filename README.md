@@ -59,4 +59,4 @@ All URLs I have used you can find in `index.html` starting from line 44. Just sw
 
 - [ ] Better phone view
 - [ ] Maybe add some colors in terminal...
-- [ ] Add wether in info panel 
+- [ ] Add weather in info panel 
