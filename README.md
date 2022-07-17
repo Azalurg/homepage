@@ -52,5 +52,11 @@ In those lines you can swap `'btcusdc'` to pair you like, `'@kline_5m'` to some 
 All URLs I have used you can find in `index.html` starting from line 44. Just swap href and title to whatever you like ;-)
 </details>
 
-# Screenshot
+## Screenshot
 ![image](./screenshots/Screenshot.png)
+
+## Todo
+
+- [ ] Better phone view
+- [ ] Maybe add some colors in terminal...
+- [ ] Add wether in info panel 
