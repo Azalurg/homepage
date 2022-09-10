@@ -1,0 +1,17 @@
+[
+    {
+        "title": "daily",
+        "href": {
+            "youtube": "https://www.youtube.com/",
+            "facebook": "https://www.facebook.com/",
+            "gmail": "https://mail.google.com/",
+            "instagram": "https://www.instagram.com/"
+        }
+    },
+    {
+        "title": "dev",
+        "href": {
+            "github": "https://github.com/Azalurg"
+        }
+    }
+]

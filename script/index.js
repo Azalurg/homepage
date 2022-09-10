@@ -39,7 +39,7 @@ setInterval(()=> {
 date.innerText = new Date().toLocaleDateString('pl-PL');
 
 // Background
-body.style.backgroundImage = `url(https://picsum.photos/1920/1080?random=1)`;
+// body.style.backgroundImage = `url(https://picsum.photos/1920/1080?random=1)`;
 
 
 // Search engine
