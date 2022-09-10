@@ -14,13 +14,14 @@
     <link href="https://fonts.googleapis.com/css?family=Anonymous+Pro&display=swap" rel="stylesheet">
 
     <!-- Init -->
-    <script type="module" src="script/init.js"></script> 
+    <!-- <script type="module" src="script/bookmarks.js"></script>  -->
+    <script type="module" src="script/main.js"></script> 
 
     <title>~/homepage</title>
     <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/Azalurg-Uni-Projects/Frontend-React-Project/main/frontend/public/favicon.ico">
 </head>
 <body id="body" onload="document.jsform.searchValue.focus()">
-    <div class="terminal">
+    <div class="terminal" id="terminal">
         <p>~/homepage > info --all</p>
 
         <div class="info">
@@ -45,7 +46,7 @@
         <p>~/homepage > ls</p>
 
         <div class="bookmarks" id="bookmarks"></div>
-        
+
         <form class="js-form" name="jsform">
             <label for="searchValue">~/homepage > cd</label>
             <input type="text" name="searchValue" id="searchValue" autocomplete="off">
