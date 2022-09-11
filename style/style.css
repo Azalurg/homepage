@@ -1,9 +1,9 @@
 body {
   margin: 0;
   padding: 0;
-  line-height: 1.5;
+  line-height: 1.2;
   min-height: 100vh;
-  font-size: 1.25rem;
+  font-size: 1.1rem;
   font-weight: 400;
   font-family: "Anonymous Pro", monospace;
   background-image: url("https://images.pexels.com/photos/1287145/pexels-photo-1287145.jpeg");
@@ -33,7 +33,7 @@ body {
   padding-bottom: 1rem;
 }
 .bookmarks .category .title {
-  font-size: 1.75rem;
+  font-size: 1.5rem;
   text-decoration: underline;
 }
 
@@ -67,7 +67,6 @@ form #searchValue {
 }
 
 li {
-  font-size: 1.25rem;
   list-style-type: none;
   padding: 0.5rem;
 }

@@ -1,5 +1,6 @@
-// Crypto price
+import config from "../data/config.json" assert {type: 'json'}
 
+// Crypto price
 const foreground = '#d8dee9'
 const red = '#e06c75'
 const green = '#98c379'
@@ -39,7 +40,10 @@ setInterval(()=> {
 date.innerText = new Date().toLocaleDateString('pl-PL');
 
 // Background
-// body.style.backgroundImage = `url(https://picsum.photos/1920/1080?random=1)`;
+if (config.dynamicBackground){
+    body.style.backgroundImage = `url(https://picsum.photos/1920/1080?random=1)`;
+}
+
 
 
 // Search engine
