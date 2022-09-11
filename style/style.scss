@@ -73,15 +73,14 @@ body{
 }
 
 form{
-  display: block;
-  margin-block-start: 1em;
-  margin-block-end: 1em;
-  margin-inline-start: 0px;
-  margin-inline-end: 0px;
+  display: flex;
+  margin: 1rem 0;
+  width: 100%;
 
-  #searchValue{
+  input{
     all: unset;
-    width: 80%;
+    margin-left: 1rem;
+    flex-grow: 1;
   }
 }
 
