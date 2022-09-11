@@ -56,7 +56,20 @@ In those lines you can swap `'btcusdc'` to pair you like, `'@kline_5m'` to some 
 <details>
 <summary><strong>Links</strong></summary>
 
-All URLs I have used you can find in `index.html` starting from line 44. Just swap href and title to whatever you like ;-)
+To change bookmarks section go to `data/routes.json`. This file hold the list of all bookmarks. Follow the pattern and add your own.
+
+```json
+{
+        "title": "daily",
+        "href": {
+            "youtube": "https://www.youtube.com/",
+            "facebook": "https://www.facebook.com/",
+            "gmail": "https://mail.google.com/",
+            "instagram": "https://www.instagram.com/"
+        }
+}
+```
+
 </details>
 
 ## Screenshot
