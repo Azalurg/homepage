@@ -1,5 +1,6 @@
-// Crypto price
+import config from "../data/config.json" assert {type: 'json'}
 
+// Crypto price
 const foreground = '#d8dee9'
 const red = '#e06c75'
 const green = '#98c379'
@@ -10,7 +11,7 @@ let lastPrice = null;
 
 ws.onmessage = (event) => {
     let stockObject = JSON.parse(event.data);
-    let price = parseFloat(stockObject.k.h).toFixed(2);
+    let price = parseFloat(stockObject.k.c).toFixed(2);
     stockPriceElement.innerText = "$" + price;
     stockPriceElement.style.color = !lastPrice || lastPrice === price ? foreground : price > lastPrice ? green : red
     lastPrice = price;
@@ -22,14 +23,13 @@ let lastPrice_eth = null;
 
 ws_eth.onmessage = (event) => {
     let stockObject = JSON.parse(event.data);
-    let price = parseFloat(stockObject.k.h).toFixed(2);
+    let price = parseFloat(stockObject.k.c).toFixed(2);
     stockPriceElement_eth.innerText = "$" + price;
     stockPriceElement_eth.style.color = !lastPrice_eth || lastPrice_eth === price ? foreground : price > lastPrice_eth ? green : red
     lastPrice_eth = price;
 }
 
 // Time
-
 setInterval(()=> {
     const current_date = new Date();
     time.innerText = current_date.toLocaleTimeString('pl-PL');
@@ -39,8 +39,9 @@ setInterval(()=> {
 date.innerText = new Date().toLocaleDateString('pl-PL');
 
 // Background
-body.style.backgroundImage = `url(https://picsum.photos/1920/1080?random=1)`;
-
+if (config.dynamicBackground){
+    body.style.backgroundImage = `url(https://picsum.photos/1920/1080?random=1)`;
+}
 
 // Search engine
 document.querySelector('.js-form')?.addEventListener('submit', e => {

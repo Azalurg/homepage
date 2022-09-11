@@ -1,9 +1,9 @@
 body {
   margin: 0;
   padding: 0;
-  line-height: 1.5;
+  line-height: 1.2;
   min-height: 100vh;
-  font-size: 1.25rem;
+  font-size: 1.1rem;
   font-weight: 400;
   font-family: "Anonymous Pro", monospace;
   background-image: url("https://images.pexels.com/photos/1287145/pexels-photo-1287145.jpeg");
@@ -26,11 +26,11 @@ body {
   flex-wrap: wrap;
 }
 .bookmarks .category {
+  list-style: none;
   display: flex;
   flex-direction: column;
   width: 10rem;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  padding: 1rem 0;
 }
 .bookmarks .category .title {
   font-size: 1.75rem;
@@ -51,23 +51,17 @@ body {
   align-items: center;
 }
 form {
-  display: block;
-  -webkit-margin-before: 1em;
-          margin-block-start: 1em;
-  -webkit-margin-after: 1em;
-          margin-block-end: 1em;
-  -webkit-margin-start: 0px;
-          margin-inline-start: 0px;
-  -webkit-margin-end: 0px;
-          margin-inline-end: 0px;
+  display: flex;
+  margin: 1rem 0;
+  width: 100%;
 }
-form #searchValue {
+form input {
   all: unset;
-  width: 80%;
+  margin-left: 1rem;
+  flex-grow: 1;
 }
 
 li {
-  font-size: 1.25rem;
   list-style-type: none;
   padding: 0.5rem;
 }

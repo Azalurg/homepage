@@ -1,0 +1,27 @@
+[
+    {
+        "title": "daily",
+        "href": {
+            "youtube": "https://www.youtube.com/",
+            "facebook": "https://www.facebook.com/",
+            "gmail": "https://mail.google.com/",
+            "instagram": "https://www.instagram.com/"
+        }
+    },
+    {
+        "title": "dev",
+        "href": {
+            "github": "https://github.com/Azalurg",
+            "translate": "https://translate.google.com/"
+        }
+    },
+    {
+        "title": "stocks",
+        "href": {
+            "ibkr": "https://www.interactivebrokers.co.uk/sso/Login",
+            "xtb": "https://xstation5.xtb.com",
+            "coingecko": "https://www.coingecko.com/",
+            "portfolio": "http://azalurg.hopto.org/"
+        }
+    }
+]
