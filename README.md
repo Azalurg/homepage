@@ -8,18 +8,22 @@ Hi, here you can find my custom, handmade homepage. I got inspired by [Peyrzival
 <summary><strong>Background image</strong></summary>
 
 In order to change background image (set it static or change API) edit line 42 in `/script/index.js`.
+
 ```js
 body.style.backgroundImage = `url(YOUR_IMAGE_URL)`;
 ```
+
 </details>
 
 <details>
 <summary><strong>Search engine</strong></summary>
 
 DuckDuckGo is my favorite, but if you want to set, lest say Google, edit line 48 in `/script/index.js`.
+
 ```js
     window.open(`YOUR_SEARCH_ENGINE_URL${searchValue.value}`, "_self")
 ```
+
 </details>
 
 <details>
@@ -37,13 +41,16 @@ To change the format, edit line 35/39 in `/script/index.js`. Swap `'pl-PL'` into
 </div>
 
 Everything about binance web socket api you can find [here](https://binance-docs.github.io/apidocs/spot/en/#websocket-market-streams). In order to change anything check lines 7-17 or 19-29 in `/script/index.js`. Focus mainly:
+
 ```js
 let ws = new WebSocket("wss://stream.binance.com:9443/ws/btcusdt@kline_5m");
 ```
+
 ```js
 let price = parseFloat(stockObject.k.h).toFixed(2);
 ```
-In those lines you can swap `'btcusdc'` to pair you like, `'@kline_5m'` to some others interval or type. If you change the type, you will probably have to change also `stockObject.XXX` to something else. 
+
+In those lines you can swap `'btcusdc'` to pair you like, `'@kline_5m'` to some others interval or type. If you change the type, you will probably have to change also `stockObject.XXX` to something else.
 </details>
 
 <details>
@@ -53,10 +60,11 @@ All URLs I have used you can find in `index.html` starting from line 44. Just sw
 </details>
 
 ## Screenshot
+
 ![image](./screenshots/Screenshot.png)
 
 ## Todo
 
 - [ ] Better phone view
 - [ ] Maybe add some colors in terminal...
-- [ ] Add weather in info panel 
+- [ ] Add weather in info panel
