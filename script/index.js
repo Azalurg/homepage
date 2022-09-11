@@ -43,8 +43,6 @@ if (config.dynamicBackground){
     body.style.backgroundImage = `url(https://picsum.photos/1920/1080?random=1)`;
 }
 
-
-
 // Search engine
 document.querySelector('.js-form')?.addEventListener('submit', e => {
     e.preventDefault();

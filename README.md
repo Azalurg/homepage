@@ -51,6 +51,7 @@ let price = parseFloat(stockObject.k.h).toFixed(2);
 ```
 
 In those lines you can swap `'btcusdc'` to pair you like, `'@kline_5m'` to some others interval or type. If you change the type, you will probably have to change also `stockObject.XXX` to something else.
+
 </details>
 
 <details>
