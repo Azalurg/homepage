@@ -1,3 +1,4 @@
 {
-    "dynamicBackground": false
+    "dynamicBackground": true,
+    "newPageOpen": false
 }

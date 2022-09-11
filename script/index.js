@@ -11,7 +11,7 @@ let lastPrice = null;
 
 ws.onmessage = (event) => {
     let stockObject = JSON.parse(event.data);
-    let price = parseFloat(stockObject.k.h).toFixed(2);
+    let price = parseFloat(stockObject.k.c).toFixed(2);
     stockPriceElement.innerText = "$" + price;
     stockPriceElement.style.color = !lastPrice || lastPrice === price ? foreground : price > lastPrice ? green : red
     lastPrice = price;
@@ -23,14 +23,13 @@ let lastPrice_eth = null;
 
 ws_eth.onmessage = (event) => {
     let stockObject = JSON.parse(event.data);
-    let price = parseFloat(stockObject.k.h).toFixed(2);
+    let price = parseFloat(stockObject.k.c).toFixed(2);
     stockPriceElement_eth.innerText = "$" + price;
     stockPriceElement_eth.style.color = !lastPrice_eth || lastPrice_eth === price ? foreground : price > lastPrice_eth ? green : red
     lastPrice_eth = price;
 }
 
 // Time
-
 setInterval(()=> {
     const current_date = new Date();
     time.innerText = current_date.toLocaleTimeString('pl-PL');
