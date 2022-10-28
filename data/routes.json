@@ -5,14 +5,15 @@
             "youtube": "https://www.youtube.com/",
             "facebook": "https://www.facebook.com/",
             "gmail": "https://mail.google.com/",
-            "instagram": "https://www.instagram.com/"
+            "instagram": "https://www.instagram.com/",
+            "reddit": "https://www.reddit.com/"
         }
     },
     {
         "title": "dev",
         "href": {
             "github": "https://github.com/Azalurg",
-            "translate": "https://translate.google.com/"
+            "nixos": "https://nixos.org/"
         }
     },
     {
