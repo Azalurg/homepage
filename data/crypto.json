@@ -1,0 +1,17 @@
+[
+    {
+        "base":"ETH",
+        "express": "USDT",
+        "precision": 4
+    },
+    {
+        "base":"BTC",
+        "express": "USDT",
+        "precision": 2
+    },
+    {
+        "base":"BTC",
+        "express": "ETH",
+        "precision": 4
+    }
+]

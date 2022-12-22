@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "outDir": "./scripts/js",
+    "sourceMap": true,
+    "strict": true,
+    "module": "commonjs",
+    "esModuleInterop": true,
+    "target": "es5"
+  },
+  "include": [
+    "./scripts/ts/**/*"
+  ]
+}
