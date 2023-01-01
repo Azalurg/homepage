@@ -13,8 +13,9 @@
         "title": "dev",
         "href": {
             "github": "https://github.com/Azalurg",
-            "nixos": "https://nixos.org/",
-            "chatgpt": "https://chat.openai.com/chat"
+            "arch": "https://archlinux.org/packages/",
+            "chatgpt": "https://chat.openai.com/chat",
+            "nixos": "https://nixos.org/"
         }
     },
     {
