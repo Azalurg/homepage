@@ -83,6 +83,10 @@ a:hover {
   opacity: 1;
 }
 
+svg{
+  margin-right: 0.5rem;
+}
+
 @-webkit-keyframes opacity {
   0% {
     opacity: 1;
