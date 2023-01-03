@@ -35,20 +35,23 @@ const weatherCodes = {
     99: ["thunderstorm", "thunderstorm"]
   }
 
-const weatherElement = document.getElementById("weather");
+// ToDo add precipitation and wind speed
 
 fetch(api_endpoint)
     .then(response => response.json())
     .then(data => {
         const date = new Date();
-        const hour = date.getHours() + 1;
-        const temperature = data.hourly.temperature_2m[hour];
-        const precipitation = data.hourly.precipitation[hour];
-        const weathercode = data.hourly.weathercode[hour];
-        const relativehumidity_2m = data.hourly.relativehumidity_2m[hour];
-        const windspeed_10m = data.hourly.windspeed_10m[hour];
-        const response = `${icons[weatherCodes[weathercode][0]]} | ${temperature}°C`
-        weatherElement.innerHTML = response
+        const hour = date.getHours();
+        for(let i = 0; i < 7; i++){
+          const choice= hour + i*3
+          const time = new Date(data.hourly.time[choice]).getHours()
+          const icon_code = data.hourly.weathercode[choice]
+          const temperature = data.hourly.temperature_2m[choice]
+          const weatherElementTitle = document.getElementById(`weather-element-title-${i}`);
+          const weatherElement = document.getElementById(`weather-element-${i}`);
+          weatherElementTitle.innerHTML = `[${time}:00]`
+          weatherElement.innerHTML = `<span style="display: flex; align-items: center">${icons[weatherCodes[icon_code][0]]}${temperature}°C</span>`
+        }
     })
     .catch(error => {
         console.error(error);
