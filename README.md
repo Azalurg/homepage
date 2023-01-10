@@ -73,6 +73,18 @@ To change bookmarks section go to `data/routes.json`. This file hold the list of
 
 </details>
 
+<details>
+<summary><strong>Weather</strong></summary>
+
+Weather data are based of [Open Meteo API](https://open-meteo.com/). To change location on your own swap values of latitude, longitude. They are located in `script/weather.js` in lines 3 and 4.
+
+```js 
+    const latitude = 54.52;
+    const longitude = 18.53; 
+```
+
+</details>
+
 ## Screenshot
 
 ![image](./screenshots/Screenshot.png)
@@ -81,4 +93,4 @@ To change bookmarks section go to `data/routes.json`. This file hold the list of
 
 - [ ] Better phone view
 - [ ] Maybe add some colors in terminal...
-- [ ] Add weather in info panel
+- [X] Add weather in info panel

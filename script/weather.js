@@ -45,12 +45,18 @@ fetch(api_endpoint)
         for(let i = 0; i < 7; i++){
           const choice= hour + i*3
           const time = new Date(data.hourly.time[choice]).getHours()
-          const icon_code = data.hourly.weathercode[choice]
+          let icon_svg = ""
+          if(time >= 19 || time <= 7){
+            icon_svg = icons[weatherCodes[data.hourly.weathercode[choice]][1]]
+          } else {
+            icon_svg = icons[weatherCodes[data.hourly.weathercode[choice]][0]]
+          }
+         
           const temperature = data.hourly.temperature_2m[choice]
           const weatherElementTitle = document.getElementById(`weather-element-title-${i}`);
           const weatherElement = document.getElementById(`weather-element-${i}`);
           weatherElementTitle.innerHTML = `[${time}:00]`
-          weatherElement.innerHTML = `<span style="display: flex; align-items: center">${icons[weatherCodes[icon_code][0]]}${temperature}°C</span>`
+          weatherElement.innerHTML = `<span style="display: flex; align-items: center">${icon_svg}${temperature}°C</span>`
         }
     })
     .catch(error => {
