@@ -13,24 +13,26 @@ $white: #eceff4;
 
 body{
     margin: 0;
-    padding: 0;
+    // padding: 3rem 1rem;
     line-height: 1.2;
     min-height: 100vh;
     font-size: 1.1rem;
     font-weight: 400;
     font-family: 'Anonymous Pro', monospace;
     background-image: url("https://images.pexels.com/photos/1287145/pexels-photo-1287145.jpeg");
-    background-size: cover!important;
+    background-size: cover !important;
+    background-attachment: fixed;
     color: $foreground;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .terminal{
-    position: absolute;
-    top: 10%;
-    right: 20%;
-    left: 20%;
-    padding-left: 2%;
     background-color: $background;
+    p, form{
+      padding-left: 1rem;
+    }
 }
 
 .bookmarks{
@@ -64,23 +66,17 @@ body{
     padding-top: 1rem;
     padding-bottom: 1rem;
     align-items: center;
-
-
-    .title{
-      
-    }
   }
 }
 
 form{
   display: flex;
   margin: 1rem 0;
-  width: 100%;
 
   input{
     all: unset;
     margin-left: 1rem;
-    flex-grow: 1;
+    width: 50%;
   }
 }
 

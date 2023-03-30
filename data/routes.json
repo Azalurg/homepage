@@ -3,8 +3,15 @@
         "title": "daily",
         "href": {
             "youtube": "https://www.youtube.com/",
-            "facebook": "https://www.facebook.com/",
+            "messenger": "https://www.messenger.com/",
             "gmail": "https://mail.google.com/",
+            "monkeytype": "https://monkeytype.com/"
+        }
+    },
+    {
+        "title": "socials",
+        "href": {
+            "facebook": "https://www.facebook.com/",
             "instagram": "https://www.instagram.com/",
             "reddit": "https://www.reddit.com/"
         }
@@ -13,19 +20,9 @@
         "title": "dev",
         "href": {
             "github": "https://github.com/Azalurg",
+            "gpt": "https://chat.openai.com/chat",
             "arch": "https://archlinux.org/packages/",
-            "chatgpt": "https://chat.openai.com/chat",
-            "nixos": "https://nixos.org/"
-        }
-    },
-    {
-        "title": "stocks",
-        "href": {
-            "ibkr": "https://www.interactivebrokers.co.uk/sso/Login",
-            "xtb": "https://xstation5.xtb.com",
-            "coingecko": "https://www.coingecko.com/",
-            "etf.com": "https://www.etf.com/",
-            "portfolio": "http://azalurg.hopto.org/"
+            "dev.to": "https://dev.to/"
         }
     }
 ]

@@ -1,6 +1,5 @@
 body {
   margin: 0;
-  padding: 0;
   line-height: 1.2;
   min-height: 100vh;
   font-size: 1.1rem;
@@ -8,16 +7,18 @@ body {
   font-family: "Anonymous Pro", monospace;
   background-image: url("https://images.pexels.com/photos/1287145/pexels-photo-1287145.jpeg");
   background-size: cover !important;
+  background-attachment: fixed;
   color: #d8dee9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .terminal {
-  position: absolute;
-  top: 10%;
-  right: 20%;
-  left: 20%;
-  padding-left: 2%;
   background-color: rgba(31, 34, 40, 0.8);
+}
+.terminal p, .terminal form {
+  padding-left: 1rem;
 }
 
 .bookmarks {
@@ -50,15 +51,15 @@ body {
   padding-bottom: 1rem;
   align-items: center;
 }
+
 form {
   display: flex;
   margin: 1rem 0;
-  width: 100%;
 }
 form input {
   all: unset;
   margin-left: 1rem;
-  flex-grow: 1;
+  width: 50%;
 }
 
 li {
@@ -78,25 +79,8 @@ a:hover {
 }
 
 .blinking {
-  -webkit-animation: opacity 2s ease-in-out infinite;
-          animation: opacity 2s ease-in-out infinite;
+  animation: opacity 2s ease-in-out infinite;
   opacity: 1;
-}
-
-svg{
-  margin-right: 0.5rem;
-}
-
-@-webkit-keyframes opacity {
-  0% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
 }
 
 @keyframes opacity {
