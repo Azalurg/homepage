@@ -5,9 +5,9 @@ body {
   font-size: 1.1rem;
   font-weight: 400;
   font-family: "Anonymous Pro", monospace;
-  background-image: url("https://images.pexels.com/photos/1287145/pexels-photo-1287145.jpeg");
   background-size: cover !important;
   background-attachment: fixed;
+  background-color: #12101d;
   color: #d8dee9;
   display: flex;
   justify-content: center;
@@ -79,8 +79,21 @@ a:hover {
 }
 
 .blinking {
-  animation: opacity 2s ease-in-out infinite;
+  -webkit-animation: opacity 2s ease-in-out infinite;
+          animation: opacity 2s ease-in-out infinite;
   opacity: 1;
+}
+
+@-webkit-keyframes opacity {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 @keyframes opacity {

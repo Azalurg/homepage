@@ -2,7 +2,7 @@
 $background: rgba(31, 34, 40, 0.8);
 $background-alt: rgba(46, 52, 64, 0.8);
 $foreground: #d8dee9;
-$black: #5c6370;
+$black: #12101d;
 $red: #e06c75;
 $green: #98c379;
 $yellow: #d19a66;
@@ -19,9 +19,9 @@ body{
     font-size: 1.1rem;
     font-weight: 400;
     font-family: 'Anonymous Pro', monospace;
-    background-image: url("https://images.pexels.com/photos/1287145/pexels-photo-1287145.jpeg");
     background-size: cover !important;
     background-attachment: fixed;
+    background-color: $black;
     color: $foreground;
     display: flex;
     justify-content: center;
