@@ -20,9 +20,25 @@
         "title": "dev",
         "href": {
             "github": "https://github.com/Azalurg",
-            "gpt": "https://chat.openai.com/chat",
-            "arch": "https://archlinux.org/packages/",
-            "dev.to": "https://dev.to/"
+            "chat-gpt": "https://chat.openai.com/chat",
+            "arch": "https://archlinux.org/"
+        }
+    },
+    {
+        "title": "invest",
+        "href": {
+            "coingecko": "https://www.coingecko.com/pl",
+            "coinbase": "https://www.coinbase.com/",
+            "xtb": "https://xstation5.xtb.com/"
+        }
+    },
+    {
+        "title": "news",
+        "href": {
+            "businessinsider": "https://businessinsider.com.pl/",
+            "hacker-news": "https://news.ycombinator.com/",
+            "trojmiasto": "https://www.trojmiasto.pl/wiadomosci/news.phtml",
+            "xtb": "https://www.xtb.com/pl/analizy-rynkowe/wiadomosci-rynkowe"
         }
     }
 ]
