@@ -1,4 +1,5 @@
 {
     "dynamicBackground": true,
-    "newPageOpen": false
+    "newPageOpen": false,
+    "movingAvgPeriod": 100
 }
