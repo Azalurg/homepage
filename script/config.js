@@ -1,4 +1,55 @@
-{
+const routes = [
+    {
+        "title": "daily",
+        "href": {
+            "youtube": "https://www.youtube.com/",
+            "messenger": "https://www.messenger.com/",
+            "gmail": "https://mail.google.com/",
+            "monkeytype": "https://monkeytype.com/"
+        }
+    },
+    {
+        "title": "socials",
+        "href": {
+            "facebook": "https://www.facebook.com/",
+            "instagram": "https://www.instagram.com/",
+            "reddit": "https://www.reddit.com/"
+        }
+    },
+    {
+        "title": "dev",
+        "href": {
+            "github": "https://github.com/Azalurg",
+            "chat-gpt": "https://chat.openai.com/chat",
+            "arch": "https://archlinux.org/"
+        }
+    },
+    {
+        "title": "invest",
+        "href": {
+            "coingecko": "https://www.coingecko.com/pl",
+            "coinbase": "https://www.coinbase.com/",
+            "xtb": "https://xstation5.xtb.com/"
+        }
+    },
+    {
+        "title": "news",
+        "href": {
+            "businessinsider": "https://businessinsider.com.pl/",
+            "hacker-news": "https://news.ycombinator.com/",
+            "trojmiasto": "https://www.trojmiasto.pl/wiadomosci/news.phtml",
+            "xtb": "https://www.xtb.com/pl/analizy-rynkowe/wiadomosci-rynkowe"
+        }
+    }
+]
+
+const config = {
+    "dynamicBackground": true,
+    "newPageOpen": false,
+    "movingAvgPeriod": 100
+}
+
+const icons = {
     "sun": "<svg xmlns='http://www.w3.org/2000/svg' style='margin-right: 0.25rem' width='1rem' height='1rem' preserveAspectRatio='xMidYMid meet' viewBox='0 0 32 32'><path fill='currentColor' d='M16 12.005a4 4 0 1 1-4 4a4.005 4.005 0 0 1 4-4m0-2a6 6 0 1 0 6 6a6 6 0 0 0-6-6ZM5.394 6.813L6.81 5.399l3.505 3.506L8.9 10.319zM2 15.005h5v2H2zm3.394 10.193L8.9 21.692l1.414 1.414l-3.505 3.506zM15 25.005h2v5h-2zm6.687-1.9l1.414-1.414l3.506 3.506l-1.414 1.414zm3.313-8.1h5v2h-5zm-3.313-6.101l3.506-3.506l1.414 1.414l-3.506 3.506zM15 2.005h2v5h-2z'/></svg>",
     "cloud-sun": "<svg xmlns='http://www.w3.org/2000/svg' style='margin-right: 0.25rem' width='1rem' height='1rem' preserveAspectRatio='xMidYMid meet' viewBox='0 0 256 256'><path fill='currentColor' d='M156 72a78.8 78.8 0 0 0-20.2 2.7a58.9 58.9 0 0 0-9.4-11.5l9.4-13.6a7.9 7.9 0 0 0-1.9-11.1a8 8 0 0 0-11.2 1.9L113.2 54a55 55 0 0 0-26.9-6l-2.9-16.3a8 8 0 1 0-15.8 2.8l2.9 16.3a55.7 55.7 0 0 0-23.3 14.8l-13.6-9.5a8 8 0 0 0-11.1 2a7.9 7.9 0 0 0 1.9 11.1L38 78.7a55.1 55.1 0 0 0-6 27l-16.3 2.9a8 8 0 0 0 1.4 15.9h1.4l16.3-2.9a52.3 52.3 0 0 0 5.9 12.4A51.9 51.9 0 0 0 76 224h80a76 76 0 0 0 0-152ZM48.6 111.1v-.4a39.6 39.6 0 0 1 6.5-29.5V81h.1a40.1 40.1 0 0 1 25.6-16.4h.5a39.5 39.5 0 0 1 29.1 6.3l.5.3l.4.3a37.4 37.4 0 0 1 9.3 9.3a76.6 76.6 0 0 0-35.6 40a53.8 53.8 0 0 0-9-.8a52.6 52.6 0 0 0-22.1 4.9a40 40 0 0 1-5.3-13.8ZM156 208H76a36 36 0 0 1 0-72a40.3 40.3 0 0 1 4.9.3A74.9 74.9 0 0 0 80 148a8 8 0 0 0 16 0a60 60 0 1 1 60 60Z'/></svg>",
     "moon": "<svg xmlns='http://www.w3.org/2000/svg' style='margin-right: 0.25rem' width='1rem' height='1rem' preserveAspectRatio='xMidYMid meet' viewBox='0 0 32 32'><path fill='currentColor' d='M13.502 5.414a15.075 15.075 0 0 0 11.594 18.194a11.113 11.113 0 0 1-7.975 3.39c-.138 0-.278.005-.418 0a11.094 11.094 0 0 1-3.2-21.584M14.98 3a1.002 1.002 0 0 0-.175.016a13.096 13.096 0 0 0 1.825 25.981c.164.006.328 0 .49 0a13.072 13.072 0 0 0 10.703-5.555a1.01 1.01 0 0 0-.783-1.565A13.08 13.08 0 0 1 15.89 4.38A1.015 1.015 0 0 0 14.98 3Z'/></svg>",
@@ -13,3 +64,5 @@
     "snow": "<svg xmlns='http://www.w3.org/2000/svg' style='margin-right: 0.25rem' width='1rem' height='1rem' preserveAspectRatio='xMidYMid meet' viewBox='0 0 32 32'><path fill='currentColor' d='M23.5 22h-15A6.5 6.5 0 0 1 7.2 9.14a9 9 0 0 1 17.6 0A6.5 6.5 0 0 1 23.5 22zM16 4a7 7 0 0 0-6.94 6.14L9 11h-.86a4.5 4.5 0 0 0 .36 9h15a4.5 4.5 0 0 0 .36-9H23l-.1-.82A7 7 0 0 0 16 4zm-4 21.05L10.95 24L9.5 25.45L8.05 24L7 25.05l1.45 1.45L7 27.95L8.05 29l1.45-1.45L10.95 29L12 27.95l-1.45-1.45L12 25.05zm14 0L24.95 24l-1.45 1.45L22.05 24L21 25.05l1.45 1.45L21 27.95L22.05 29l1.45-1.45L24.95 29L26 27.95l-1.45-1.45L26 25.05zm-7 2L17.95 26l-1.45 1.45L15.05 26L14 27.05l1.45 1.45L14 29.95L15.05 31l1.45-1.45L17.95 31L19 29.95l-1.45-1.45L19 27.05z'/></svg>",
     "snow-heavy": "<svg xmlns='http://www.w3.org/2000/svg' style='margin-right: 0.25rem' width='1rem' height='1rem' preserveAspectRatio='xMidYMid meet' viewBox='0 0 32 32'><path fill='currentColor' d='M4 26h2v2H4zm2 2h2v2H6zm2 2h2v2H8zm0-4h2v2H8zm-4 4h2v2H4zm4-12h2v2H8zm2 2h2v2h-2zm2 2h2v2h-2zm0-4h2v2h-2zm-4 4h2v2H8zm10-4h2v2h-2zm2 2h2v2h-2zm2 2h2v2h-2zm0-4h2v2h-2zm-4 4h2v2h-2zm-4 4h2v2h-2zm2 2h2v2h-2zm2 2h2v2h-2zm0-4h2v2h-2zm-4 4h2v2h-2z'/><path fill='currentColor' d='M24.8 9.136a8.994 8.994 0 0 0-17.6 0A6.496 6.496 0 0 0 6 21.5v-2.26a4.494 4.494 0 0 1 2.144-8.22l.816-.064l.099-.812a6.994 6.994 0 0 1 13.883 0l.099.812l.815.064A4.494 4.494 0 0 1 26 19.239v2.26a6.496 6.496 0 0 0-1.2-12.363Z'/></svg>"
 }
+
+export default { routes, config, icons };
