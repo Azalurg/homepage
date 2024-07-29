@@ -1,63 +1,61 @@
-import config from "../data/config.json" assert {type: 'json'}
+const foreground = '#d8dee9';
+const red = '#e06c75';
+const green = '#98c379';
 
-function get_avg(prices) {
-    if (prices.length > config.movingAvgPeriod) {
-        prices.shift()
+const ws_btc = new WebSocket("wss://stream.binance.com:9443/ws/btcusdt@kline_5m");
+const ws_eth = new WebSocket("wss://stream.binance.com:9443/ws/ethusdt@kline_5m");
+
+const prices_btc = [];
+const prices_eth = [];
+
+const getAvg = (prices, period) => {
+    if (prices.length > period) {
+        prices.shift();
     }
-    let s = prices.reduce((a, b) => parseFloat(a) + parseFloat(b))
-    return s / prices.length;
-}
+    const sum = prices.reduce((a, b) => parseFloat(a) + parseFloat(b), 0);
+    return sum / prices.length;
+};
 
-// Crypto price
-const foreground = '#d8dee9'
-const red = '#e06c75'
-const green = '#98c379'
+const displayCryptoPrice = (element, price, avg_price, color) => {
+    element.innerText = `$${price}`;
+    element.style.color = color;
+};
 
-let ws_btc = new WebSocket("wss://stream.binance.com:9443/ws/btcusdt@kline_5m");
-let ws_eth = new WebSocket("wss://stream.binance.com:9443/ws/ethusdt@kline_5m");
+const updatePriceData = (ws, prices, element, period) => {
+    ws.onmessage = (event) => {
+        const data = JSON.parse(event.data);
+        const price = parseFloat(data.k.c).toFixed(2);
+        prices.push(price);
 
-let element_btc = document.getElementById("btc-price");
-let element_eth = document.getElementById("eth-price");
-let prices_btc = []
-let prices_eth = []
+        const avg_price = getAvg(prices, period);
+        const color = avg_price === price ? foreground : price > avg_price ? green : red;
+        displayCryptoPrice(element, price, avg_price, color);
+    };
+};
 
-ws_btc.onmessage = (event) => {
-    let data_json = JSON.parse(event.data);
-    let price = parseFloat(data_json.k.c).toFixed(2);
-    prices_btc.push(price)
+const btcElement = document.getElementById("btc-price");
+const ethElement = document.getElementById("eth-price");
 
-    let avg_price = get_avg(prices_btc)
-    element_btc.innerText = "$" + price;
-    element_btc.style.color = avg_price === price ? foreground : price > avg_price ? green : red
-}
-
-ws_eth.onmessage = (event) => {
-    let data_json = JSON.parse(event.data);
-    let price = parseFloat(data_json.k.c).toFixed(2);
-    prices_eth.push(price)
-
-    let avg_price = get_avg(prices_eth)
-    element_eth.innerText = "$" + price;
-    element_eth.style.color = avg_price === price ? foreground : price > avg_price ? green : red
-
-}
+updatePriceData(ws_btc, prices_btc, btcElement, config.movingAvgPeriod);
+updatePriceData(ws_eth, prices_eth, ethElement, config.movingAvgPeriod);
 
 // Time
 setInterval(() => {
     const current_date = new Date();
-    time.innerText = current_date.toLocaleTimeString('pl-PL');
-}, 1000)
+    document.getElementById("time").innerText = current_date.toLocaleTimeString('pl-PL');
+}, 1000);
 
 // Date
-date.innerText = new Date().toLocaleDateString('pl-PL');
+document.getElementById("date").innerText = new Date().toLocaleDateString('pl-PL');
 
 // Background
 if (config.dynamicBackground) {
-    body.style.backgroundImage = `url(https://picsum.photos/1920/1080?random=1)`;
+    document.body.style.backgroundImage = `url(https://picsum.photos/1920/1080?random=1)`;
 }
 
 // Search engine
-document.querySelector('.js-form')?.addEventListener('submit', e => {
+document.querySelector('.js-form')?.addEventListener('submit', (e) => {
     e.preventDefault();
-    window.open(`https://duckduckgo.com/?q=${searchValue.value}`, "_self")
+    const searchValue = document.querySelector('.js-search-input').value;
+    window.open(`https://duckduckgo.com/?q=${searchValue}`, "_self");
 });

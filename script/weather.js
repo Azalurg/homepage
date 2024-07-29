@@ -1,8 +1,6 @@
-import icons from "../data/icons.json" assert {type: 'json'}
-
 const latitude = 54.52;
-const longitude = 18.53; 
-const api_endpoint = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current_weather=true&hourly=temperature_2m,relativehumidity_2m,windspeed_10m,precipitation,weathercode`
+const longitude = 18.53;
+const api_endpoint = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current_weather=true&hourly=temperature_2m,relativehumidity_2m,windspeed_10m,precipitation,weathercode`;
 
 const weatherCodes = {
     0: ["sun", "moon"],
@@ -33,32 +31,42 @@ const weatherCodes = {
     95: ["thunderstorm", "thunderstorm"],
     96: ["thunderstorm", "thunderstorm"],
     99: ["thunderstorm", "thunderstorm"]
-  }
+};
 
-// ToDo add precipitation and wind speed
-
-fetch(api_endpoint)
-    .then(response => response.json())
-    .then(data => {
-        const date = new Date();
-        const hour = date.getHours();
-        for(let i = 0; i < 7; i++){
-          const choice= hour + i*3
-          const time = new Date(data.hourly.time[choice]).getHours()
-          let icon_svg = ""
-          if(time >= 19 || time <= 7){
-            icon_svg = icons[weatherCodes[data.hourly.weathercode[choice]][1]]
-          } else {
-            icon_svg = icons[weatherCodes[data.hourly.weathercode[choice]][0]]
-          }
-         
-          const temperature = data.hourly.temperature_2m[choice]
-          const weatherElementTitle = document.getElementById(`weather-element-title-${i}`);
-          const weatherElement = document.getElementById(`weather-element-${i}`);
-          weatherElementTitle.innerHTML = `[${time}:00]`
-          weatherElement.innerHTML = `<span style="display: flex; align-items: center">${icon_svg}${temperature}°C</span>`
+const fetchWeatherData = async () => {
+    try {
+        const response = await fetch(api_endpoint);
+        if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
         }
-    })
-    .catch(error => {
-        console.error(error);
-      });
+        const data = await response.json();
+        displayWeatherData(data);
+    } catch (error) {
+        console.error('Failed to fetch weather data:', error);
+        document.getElementById("weather").innerHTML = `<p>Error loading weather data. Please try again later.</p>`;
+    }
+};
+
+const displayWeatherData = (data) => {
+    const date = new Date();
+    const hour = date.getHours();
+    const weatherContainer = document.getElementById("weather");
+    let content = "";
+
+    for (let i = 0; i < 7; i++) {
+        const choice = hour + i * 3;
+        const time = new Date(data.hourly.time[choice]).getHours();
+        const iconKey = time >= 19 || time <= 7 ? weatherCodes[data.hourly.weathercode[choice]][1] : weatherCodes[data.hourly.weathercode[choice]][0];
+        const icon_svg = icons[iconKey];
+        const temperature = data.hourly.temperature_2m[choice];
+
+        content += `<div class="weather-item">
+            <div class="time">[${time}:00]</div>
+            <div class="weather-icon">${icon_svg}</div>
+            <div class="temperature">${temperature}°C</div>
+        </div>`;
+    }
+    weatherContainer.innerHTML = content;
+};
+
+fetchWeatherData();
