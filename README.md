@@ -1,6 +1,6 @@
 # Homepage
 
-Hi, here you can find my custom, handmade homepage. I got inspired by [Peyrzival](https://github.com/Peyrzival) and his build. The page is kept in terminal style, with background power by [Lorem Picsum](https://picsum.photos/), DuckDuckGo search engine and live BTC ETH price power by [Binance API](https://www.binance.com/en/binance-api).
+Hi, here you can find my custom, handmade homepage. I got inspired by [Peyrzival](https://github.com/Peyrzival) and his build. The page is kept in terminal style, with background power by [Lorem Picsum](https://picsum.photos/), DuckDuckGo search engine and live BTC & ETH price power by [Binance API](https://www.binance.com/en/binance-api).
 
 ## Make it your own
 
@@ -57,7 +57,7 @@ In those lines you can swap `'btcusdc'` to pair you like, `'@kline_5m'` to some 
 <details>
 <summary><strong>Links</strong></summary>
 
-To change bookmarks section go to `data/routes.json`. This file hold the list of all bookmarks. Follow the pattern and add your own.
+To change bookmarks section go to `script/config.js`. This file hold the list of all bookmarks. Follow the pattern and add your own.
 
 ```json
 {
@@ -87,10 +87,11 @@ Weather data are based of [Open Meteo API](https://open-meteo.com/). To change l
 
 ## Screenshot
 
-![image](./screenshots/Screenshot.png)
+![image](./screenshots/screenshot.jpg)
 
 ## Todo
 
 - [ ] Better phone view
 - [ ] Maybe add some colors in terminal...
 - [X] Add weather in info panel
+- [ ] Add commands like it is in a real terminal

@@ -63,13 +63,12 @@ const displayWeatherData = (data) => {
         const icon_svg = icons[iconKey];
         const temperature = data.hourly.temperature_2m[choice];
 
-        content += `<div class="weather-item">
-            <div class="time">[${time}:00]</div>
-            <div class="weather-icon">${icon_svg}</div>
-            <div class="temperature">${temperature}°C</div>
+        content += `<div class="category">
+            <li class="time">[${time}:00]</li>
+            <li class="weather-icon">${icon_svg} ${temperature}°C</li>
         </div>`;
     }
     weatherContainer.innerHTML = content;
 };
 
-fetchWeatherData();
+export default fetchWeatherData;

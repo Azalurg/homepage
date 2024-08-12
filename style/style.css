@@ -47,8 +47,6 @@ body {
   display: flex;
   flex-direction: column;
   width: 8rem;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
   align-items: center;
 }
 
@@ -79,21 +77,8 @@ a:hover {
 }
 
 .blinking {
-  -webkit-animation: opacity 2s ease-in-out infinite;
-          animation: opacity 2s ease-in-out infinite;
+  animation: opacity 2s ease-in-out infinite;
   opacity: 1;
-}
-
-@-webkit-keyframes opacity {
-  0% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
 }
 
 @keyframes opacity {
