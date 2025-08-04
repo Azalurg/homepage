@@ -11,14 +11,14 @@ $magenta: #c678dd;
 $cyan: #56b6c2;
 $white: #eceff4;
 
-body{
+body {
     margin: 0;
     // padding: 3rem 1rem;
     line-height: 1.2;
     min-height: 100vh;
     font-size: 1.1rem;
     font-weight: 400;
-    font-family: 'Anonymous Pro', monospace;
+    font-family: "Anonymous Pro", monospace;
     background-size: cover !important;
     background-attachment: fixed;
     background-color: $black;
@@ -28,88 +28,88 @@ body{
     align-items: center;
 }
 
-.terminal{
+.terminal {
     background-color: $background;
-    p, form{
-      padding-left: 1rem;
+    p,
+    form {
+        padding-left: 1rem;
     }
 }
 
-.bookmarks{
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-
-  .category{
-    list-style: none;
+.bookmarks {
     display: flex;
-    flex-direction: column;
-    width: 10rem;
-    padding: 1rem 0;
+    justify-content: center;
+    flex-wrap: wrap;
 
-    .title{
-      font-size: 1.5rem;
-      text-decoration: underline;
-      }
-  }
+    .category {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        width: 10rem;
+        padding: 1rem 0;
+
+        .title {
+            font-size: 1.5rem;
+            text-decoration: underline;
+        }
+    }
 }
 
-.info{
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-
-  .category{
+.info {
     display: flex;
-    flex-direction: column;
-    width: 8rem;
-    align-items: center;
-  }
+    justify-content: center;
+    flex-wrap: wrap;
+
+    .category {
+        display: flex;
+        flex-direction: column;
+        width: 8rem;
+        align-items: center;
+    }
 }
 
-form{
-  display: flex;
-  margin: 1rem 0;
+form {
+    display: flex;
+    margin: 1rem 0;
 
-  input{
-    all: unset;
-    margin-left: 1rem;
-    width: 50%;
-  }
+    input {
+        all: unset;
+        margin-left: 1rem;
+        width: 50%;
+    }
 }
 
-li{
-list-style-type: none;
-padding: 0.5rem
+li {
+    list-style-type: none;
+    padding: 0.5rem;
 }
 
-a{
+a {
     text-decoration: none;
     color: $foreground;
     padding: 0.5rem;
     border-radius: 10%;
 }
 
-a:hover{
+a:hover {
     background-color: $background-alt;
 }
-  
 
-.blinking{
+.blinking {
     animation: opacity 2s ease-in-out infinite;
     opacity: 1;
-  }
-  
-  @keyframes opacity{
-    0%{
-      opacity: 1;
+}
+
+@keyframes opacity {
+    0% {
+        opacity: 1;
     }
-  
-    50%{
-      opacity: 0;
+
+    50% {
+        opacity: 0;
     }
-  
-    100%{
-      opacity: 1;
+
+    100% {
+        opacity: 1;
     }
-  }
+}

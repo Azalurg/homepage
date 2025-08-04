@@ -1,10 +1,10 @@
-import config from './config.js';
+import config from "./config.js";
 
 const {general} = config;
 
-const foreground = '#d8dee9';
-const red = '#e06c75';
-const green = '#98c379';
+const foreground = "#d8dee9";
+const red = "#e06c75";
+const green = "#98c379";
 
 const ws_btc = new WebSocket("wss://stream.binance.com:9443/ws/btcusdt@kline_5m");
 const ws_eth = new WebSocket("wss://stream.binance.com:9443/ws/ethusdt@kline_5m");

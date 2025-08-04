@@ -1,4 +1,4 @@
-import config from './config.js';
+import config from "./config.js";
 
 const {icons} = config;
 const latitude = 54.52;
@@ -33,7 +33,7 @@ const weatherCodes = {
     86: ["snow-heavy", "snow-heavy"],
     95: ["thunderstorm", "thunderstorm"],
     96: ["thunderstorm", "thunderstorm"],
-    99: ["thunderstorm", "thunderstorm"]
+    99: ["thunderstorm", "thunderstorm"],
 };
 
 const fetchWeatherData = async () => {
@@ -45,7 +45,7 @@ const fetchWeatherData = async () => {
         const data = await response.json();
         displayWeatherData(data);
     } catch (error) {
-        console.error('Failed to fetch weather data:', error);
+        console.error("Failed to fetch weather data:", error);
         document.getElementById("weather").innerHTML = `<p>Error loading weather data. Please try again later.</p>`;
     }
 };

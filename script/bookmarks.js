@@ -1,4 +1,4 @@
-import config from './config.js';
+import config from "./config.js";
 
 const {general, routes} = config;
 
@@ -19,6 +19,6 @@ function renderBookmarks() {
     }
 
     bookmarksContainer.innerHTML = content;
-};
+}
 
 export default renderBookmarks;
